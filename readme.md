@@ -9,7 +9,7 @@
 - NOTE: If you're using CloudFront, you'll need to add another secret for the CloudFront Distribution ID.
 
 -   In the GitHub repo, click on Actions, then 'set up a workflow yourself'.
--   Copy the script at the end of this README into the ./github/workflows/main.yaml file GitHub has created, and commit the new file to the repo.
+-   Copy the script at the end of this README into the ./github/workflows/main.yml file GitHub has created, and commit the new file to the repo.
 -   Now that the workflow is set up, any commits that are pushed to the repo will automatically be uploaded to the corresponding S3 bucket.
 
 
