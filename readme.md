@@ -14,7 +14,9 @@ YAML workflow to upload files to AWS S3 bucket after each push to GitHub.
 
 
 # This portion will upload files to S3 after each push to GitHub
+
 name: Upload Website
+
 on:
   push:
     branches:
@@ -36,6 +38,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 # The following section will invalidate the CloudFront distribution, to reflect changes quickly in the browser
+
     - name: Invalidate CloudFront
       uses: chetan/invalidate-cloudfront-action@v2
       env:
