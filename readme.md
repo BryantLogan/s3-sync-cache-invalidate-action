@@ -4,15 +4,17 @@ YAML workflow to upload files to AWS S3 bucket after each push to GitHub.
 -   Save user credentials.
 -   If you're using CloudFront, you'll need to add appropriate permission to invalidate cache to the same user.
 
--   In the directory you have being tracked by Git, create a .gitignore directory, and inside that, create a workflows directory.
--   In the .gitignore/workflows directory, create a main.yaml file where you will create the GitHub Action script.
-
 -   In the GitHub repo, click on 'Settings' then 'Secrets' and 'Actions'.
 -   You'll then need to create the appropriate secrets using the name of the S3 bucket, IAM user AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
 
+-   In the GitHub repo, click on Actions, then 'set up a workflow yourself'
+-   Copy the script at the end of this README into the ./github/workflows/main.yaml file GitHub has created, and commit the new file to the repo
 
-name: Upload Website
+-   Now that the workflow is set up, any commits that are pushed to the repo will automatically be uploaded to the corresponding S3 bucket
+
+
 # This portion will upload files to S3 after each push to GitHub
+name: Upload Website
 on:
   push:
     branches:
@@ -32,6 +34,7 @@ jobs:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
 # The following section will invalidate the CloudFront distribution, to reflect changes quickly in the browser
     - name: Invalidate CloudFront
       uses: chetan/invalidate-cloudfront-action@v2
