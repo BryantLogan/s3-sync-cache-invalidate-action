@@ -35,8 +35,6 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-# The following section will invalidate the CloudFront distribution, to reflect changes quickly in the browser
-
     - name: Invalidate CloudFront
       uses: chetan/invalidate-cloudfront-action@v2
       env:
