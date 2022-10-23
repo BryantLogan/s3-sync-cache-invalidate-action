@@ -13,8 +13,6 @@ YAML workflow to upload files to AWS S3 bucket after each push to GitHub.
 -   Now that the workflow is set up, any commits that are pushed to the repo will automatically be uploaded to the corresponding S3 bucket
 
 
-# This portion will upload files to S3 after each push to GitHub
-
 name: Upload Website
 
 on:
