@@ -1,6 +1,6 @@
 # GitHub Actions workflow to upload files to AWS S3 bucket after each push to GitHub.
 
--   Must created an AWS user with permissions that allow writes to S3.
+-   Must create an AWS user with permissions that allow writes to S3.
 -   Save user credentials.
 -   NOTE: If you're using CloudFront, you'll need to add appropriate policy with permission to invalidate cache to the same user.
 
